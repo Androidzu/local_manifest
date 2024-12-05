@@ -1,22 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-	<remote name="mt6768-dev" fetch="https://github.com/mt6768-dev"/>
-	<remote name="andexzu" fetch="https://github.com/andezu"/>
-	<remote name="LineageOS" fetch="https://github.com/LineageOS"/>
-	<!-- Device Trees -->
-	<project path="device/xiaomi/lancelot" name="android_device_xiaomi_lancelot" remote="mt6768-dev" revision="lineage-21"/>
-	<project path="device/xiaomi/mt6768-common" name="android_device_xiaomi_mt6768-common" remote="andexzu" revision="lineage-21"/>
-	<!-- Vendor Trees -->
-	<project path="vendor/xiaomi/lancelot" name="proprietary_vendor_xiaomi_lancelot" remote="mt6768-dev" revision="lineage-21"/>
-	<project path="vendor/xiaomi/mt6768-common" name="proprietary_vendor_xiaomi_mt6768-common" remote="mt6768-dev" revision="lineage-21"/>
-	<!-- Kernel Tree -->
-	<project path="kernel/xiaomi/mt6768" name="android_kernel_xiaomi_mt6768" remote="mt6768-dev" revision="lineage-21"/>
-	<!-- Hardware -->
-	<project path="hardware/xiaomi" name="android_hardware_xiaomi" remote="LineageOS" revision="lineage-21"/>
-	<project path="hardware/mediatek" name="android_hardware_mediatek" remote="LineageOS" revision="lineage-21"/>
-	<!-- Sepolicy -->
-	<project path="device/mediatek/sepolicy_vndr" name="android_device_mediatek_sepolicy_vndr" remote="LineageOS" revision="lineage-21"/>
-	<!-- Updater -->
-	<remove-project name="LineageOS/android_packages_apps_Updater"/>
-	<project path="packages/apps/Updater" name="android_packages_apps_Updater" remote="andexzu" revision="lineage-21.0"/>
+                           <!--Sourse--> 
+    <!-- Device -->	
+   <remote  name="LineageOS"
+	   fetch="https://github.com/LineageOS"
+           revision="lineage-20"/>
+   <!-- Vendor -->       
+   <remote  name="vendor"
+	   fetch="https://github.com/andexzu"
+           revision="13.0"/> 
+     <!-- Ota -->      
+     <remote  name="OTA"
+	   fetch="https://github.com/andexzu"
+           revision="13.0"/>  
+                            <!--Sourse--> 
+<!-- Kernel Tree-->           
+  <project path="kernel/xiaomi/mt6768" name="android_kernel_xiaomi_mt6768" remote="LineageOS" clone-depth="1" />                
+<!-- Device Tree--> 
+  <project path="device/xiaomi/lancelot" name="android_device_xiaomi_lancelot" remote="LineageOS" clone-depth="1" />
+<!-- Device Common-->   
+  <project path="device/xiaomi/mt6768-common" name="android_device_xiaomi_mt6768-common" remote="LineageOS" clone-depth="1" />
+<!-- Vendor Tree-->   
+  <project path="vendor/xiaomi" name="lancelot_xiaomi_vendor" remote="vendor" clone-depth="1" />
+<!-- Sepolicy -->   
+  <project path="device/mediatek/sepolicy_vndr" name="android_device_mediatek_sepolicy_vndr" remote="LineageOS" clone-depth="1" />
+<!-- Hardware-->   
+  <project path="hardware/mediatek" name="android_hardware_mediatek" remote="LineageOS" clone-depth="1" />
+<!-- Updater-->   
+  <!-- <project path="packages/apps/Updater" name="android_packages_apps_Updater" remote="OTA" clone-depth="1"/>-->
+<!-- OTA-->   
+  <!-- <project path="vendor/crDroidOTA" name="android_vendor_crDroidOTA" remote="OTA" clone-depth="1"/> -->
+                      <!--End--> 
 </manifest>
